@@ -17,7 +17,7 @@ app.use(cors({
 
 
 // Import Routes
-const MovieSearch = require("./routes/imdb-routes");
+const MovieSearch = require("./routes/tmdb-routes");
 // const sendOrder = require("./routes/SendOrder");
 // const createGig = require('./routes/gig');
 // const allGig = require('./routes/Get/allGigs');
