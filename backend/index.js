@@ -40,7 +40,7 @@ dotenv.config();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 // app.use(cookieParser());
 // const oneDay = 1000 * 60 * 60 * 24;
 // app.use(session({
