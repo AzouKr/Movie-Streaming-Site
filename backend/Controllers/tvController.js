@@ -67,13 +67,10 @@ module.exports = {
   },
 
   details: async (req, res) => {
-    const name = req.body.name;
-    const movie_id = getTvId.getTvId(name);
-    movie_id.then(function(result) {
-      Axios.get("https://api.themoviedb.org/3/tv/"+ result +"?api_key="+ process.env.api_key).then((response) => {
+    const id = req.body.id;
+    Axios.get("https://api.themoviedb.org/3/tv/"+ id +"?api_key="+ process.env.api_key).then((response) => {
       res.send(response.data);
     });
-   })
   },    
 
   images: async (req, res) => {
@@ -107,23 +104,17 @@ module.exports = {
   }, 
 
   similar: async (req, res) => {
-    const name = req.body.name;
-    const movie_id = getTvId.getTvId(name);
-    movie_id.then(function(result) {
-      Axios.get("https://api.themoviedb.org/3/tv/"+ result +"/similar?api_key="+ process.env.api_key).then((response) => {
+    const id = req.body.id;
+    Axios.get("https://api.themoviedb.org/3/tv/"+ id +"/similar?api_key="+ process.env.api_key).then((response) => {
       res.send(response.data);
     });
-   })
   },
 
   recommendations: async (req, res) => {
-    const name = req.body.name;
-    const movie_id = getTvId.getTvId(name);
-    movie_id.then(function(result) {
-      Axios.get("https://api.themoviedb.org/3/tv/"+ result +"/recommendations?api_key="+ process.env.api_key).then((response) => {
+    const id = req.body.id;
+    Axios.get("https://api.themoviedb.org/3/tv/"+ id +"/recommendations?api_key="+ process.env.api_key).then((response) => {
       res.send(response.data);
     });
-   })
   },
 
   reviews: async (req, res) => {

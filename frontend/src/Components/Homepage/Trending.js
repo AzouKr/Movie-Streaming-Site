@@ -2,6 +2,7 @@ import React from 'react'
 import './Trending.css';
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import {Link} from 'react-router-dom';
 
 
 function Trending() {
@@ -20,7 +21,9 @@ function Trending() {
     return info.slice(0, 6).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + (item.backdrop_path.toString());
       return (
+        <Link to={`/moviedetails/${item.id}`}>
         <a href=""><img src= {imagesrc} alt=""/></a>
+        </Link>
       );
     });
   }

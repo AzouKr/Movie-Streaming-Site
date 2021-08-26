@@ -2,6 +2,8 @@ import React from 'react'
 import './TVShow.css';
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import {Link} from 'react-router-dom';
+
 
 function TVShow() {
   
@@ -18,7 +20,10 @@ function TVShow() {
     return info.slice(0, 12).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + (item.backdrop_path);
       return (
+        <Link to={`/tvdetails/${item.id}`}>
         <a href=""><img src= {imagesrc} alt=""/></a>
+        </Link>
+
       );
     });
   }
