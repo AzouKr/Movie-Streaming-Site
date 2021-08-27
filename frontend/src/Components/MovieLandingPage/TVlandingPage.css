@@ -1,7 +1,8 @@
 .banner{
+    top: 40px;
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     padding: 0 100px;
     display: flex;
     justify-content: flex-start;
@@ -231,4 +232,10 @@
       padding-left: 50px ;
       margin-top: 80px;
       margin-bottom: -10px;
+  }
+
+  .location1{
+    position: relative;
+    left: 80px;
+    margin-bottom: -80px;
   }

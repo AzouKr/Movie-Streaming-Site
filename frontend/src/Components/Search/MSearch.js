@@ -12,7 +12,7 @@ function MSearch() {
     const location = useLocation().state;
   
     useEffect(() => {
-      Axios.post("http://localhost:3001/api/movies/search",{
+      Axios.post("http://localhost:3001/api/multi/search",{
           name: location.name,
       }).then((response) => {
         setinfo(response.data.results);
@@ -32,7 +32,7 @@ function MSearch() {
     return (
         <div>
         <Navbar/>
-        <div class="location" id="home">
+        <div class="location4" id="home">
           <h1 className="result">Results  of {location.name}</h1>
           <div class="box">
           {display()}

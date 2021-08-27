@@ -18,14 +18,10 @@
   .box img {
     border-radius: 2px;
   }
-
-  .result{
-    margin-left: 60px;
-    margin-top: 30px;
-  }
   
-.location4{
-  position: relative;
-  left: 80px;
-  top: 30px;
-}
+
+  .location2{
+    position: relative;
+    top: 60px;
+    left: 80px;
+  }

@@ -4,6 +4,8 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import Navbar from "../Navbar";
+import Footer from '../Footer';
+
 
 function MLandingPage() {
   const { id } = useParams();
@@ -92,7 +94,7 @@ function MLandingPage() {
           </div>
         </div>
       </div>
-      <div class="location" id="home">
+      <div class="location1" id="home">
         <h1 className="Similar">Similar</h1>
         <div class="box">{display()}</div>
       </div>
@@ -100,6 +102,7 @@ function MLandingPage() {
         <h1 className="Similar">Recommendations</h1>
         <div class="box">{display1()}</div>
       </div>
+      <Footer/>
     </div>
   );
 }

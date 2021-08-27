@@ -9,7 +9,7 @@ const multicontroller = require("../Controllers/multiController");
 // *************************** Multi Search **************************************
 
 // Search for a movie/tvShow.
-router.get("/multi/search", multicontroller.Search);
+router.post("/multi/search", multicontroller.Search);
 
 
 // *************************** Search Movies **************************************

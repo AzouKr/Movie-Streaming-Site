@@ -63,11 +63,11 @@ function Streaming() {
         scrolling="no"
         allowfullscreen="allowfullscreen"
       />
-      <div class="location" id="home">
+      <div class="location1" id="home">
         <h1 className="Similar">Similar</h1>
         <div class="box">{display()}</div>
       </div>
-      <div class="location" id="home">
+      <div class="location1" id="home">
         <h1 className="Similar">Recommendations</h1>
         <div class="box">{display1()}</div>
       </div>

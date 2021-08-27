@@ -27,8 +27,12 @@ function Navbar() {
       <Link to="/">         
         <a href="#home">Home</a>
         </Link>  
-        <a href="#tvShows">TV Shows</a>
-        <a href="#movies">Movies</a>
+        <Link to="/series">
+        <a href="#tvShows">Series</a>
+        </Link>
+        <Link to="/movies"> 
+        <a href="">Movies</a>
+        </Link> 
         <a href="#originals">Originals</a>
         <a href="#">Recently Added</a>
       </nav>

@@ -30,9 +30,11 @@ function TVShow() {
 
     return (
         <div>
+        <div className="location">
             <h1 id="tvShows">TV Shows</h1>
       <div class="box">
       {display()}             
+      </div>
       </div>
         </div>
     )

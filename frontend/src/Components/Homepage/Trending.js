@@ -30,10 +30,12 @@ function Trending() {
 
     return (
         <div>
-            <h1 id="myList">Top Rated</h1>
+        <div className="location">
+        <h1 id="myList">Top Rated</h1>
       <div class="box">
       {display()}               
       </div>
+        </div>
         </div>
     )
 }
