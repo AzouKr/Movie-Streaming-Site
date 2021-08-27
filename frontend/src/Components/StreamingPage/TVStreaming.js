@@ -13,6 +13,7 @@ function TVStreaming() {
   const { episode_number } = useParams();
 
   const url = "https://autoembed.xyz/tv/tmdb/" + id + "-"+ season + "-" + episode_number;
+  const [info, setinfo] = useState([]);
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
   const [info3, setinfo3] = useState([]);
@@ -21,7 +22,7 @@ function TVStreaming() {
 
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/tv/details", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/details", {
       id: id,
     }).then((response) => {
       setinfo3(response.data.seasons);
@@ -29,7 +30,15 @@ function TVStreaming() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/tv/detailsseason", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/details", {
+      id: id,
+    }).then((response) => {
+      setinfo(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/detailsseason", {
       id: id,
       id_s: season,
     }).then((response) => {
@@ -38,7 +47,7 @@ function TVStreaming() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/tv/similar", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/similar", {
       id: id,
     }).then((response) => {
       setinfo1(response.data.results);
@@ -46,7 +55,7 @@ function TVStreaming() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/tv/recommendations", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/recommendations", {
       id: id,
     }).then((response) => {
       setinfo2(response.data.results);
@@ -108,6 +117,7 @@ function TVStreaming() {
   return (
     <div>
       <Navbar />
+      <h1 className="title">{info.name}</h1>
       <iframe
       className="iframe"
         src={url}

@@ -41,7 +41,7 @@ function Series() {
     return info1.map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + (item.backdrop_path);
       return (
-        <Link to={`/moviedetails/${item.id}`}>
+        <Link to={`/tvdetails/${item.id}`}>
         <a href=""><img src= {imagesrc} alt=""/></a>
         </Link>
       );

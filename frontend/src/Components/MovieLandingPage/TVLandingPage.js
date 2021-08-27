@@ -10,12 +10,14 @@ function TVLandingPage() {
 
   const { id } = useParams();
   const [info, setinfo] = useState([]);
+  const [info3, setinfo3] = useState([]);
+  const [info4, setinfo4] = useState([]);
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
 
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/tv/details", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/details", {
       id: id,
     }).then((response) => {
       setinfo(response.data);
@@ -23,7 +25,23 @@ function TVLandingPage() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/tv/similar", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/details", {
+      id: id,
+    }).then((response) => {
+      setinfo3(response.data.genres[0]);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/details", {
+      id: id,
+    }).then((response) => {
+      setinfo4(response.data.first_air_date);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/similar", {
       id: id,
     }).then((response) => {
       setinfo1(response.data.results);
@@ -31,7 +49,7 @@ function TVLandingPage() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/tv/recommendations", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/tv/recommendations", {
       id: id,
     }).then((response) => {
       setinfo2(response.data.results);
@@ -73,13 +91,14 @@ function TVLandingPage() {
         <img src={imagesrc} class="bg" alt="" />
         <div class="content">
           <img src="images/mortal-kombat.png" class="movieTitle" alt="" />
+          <h1>{info.name}</h1>
           <h4>
-            <span>2020</span>
+            <span>{info4.slice(0,4)}</span>
             <span>
               <i>16+</i>
             </span>
             <span>1hr 55mins</span>
-            <span>11</span>
+            <span>{info3.name}</span>
           </h4>
           <p>{info.overview}</p>
           <div class="buttons">

@@ -4,3 +4,10 @@ iframe{
     height: 600px;
     width: 1000px;
 }
+
+.title{
+    position: absolute;
+    left: 48rem;
+    top: 10rem;
+
+}

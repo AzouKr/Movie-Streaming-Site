@@ -9,11 +9,12 @@ import Footer from "../Footer";
 function Streaming() {
   const { id } = useParams();
   const url = "https://autoembed.xyz/movie/tmdb/" + id;
+  const [info, setinfo] = useState([]);
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/movies/similar", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/similar", {
       id: id,
     }).then((response) => {
       setinfo1(response.data.results);
@@ -21,7 +22,15 @@ function Streaming() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/movies/recommendations", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/details", {
+      id: id,
+    }).then((response) => {
+      setinfo(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/recommendations", {
       id: id,
     }).then((response) => {
       setinfo2(response.data.results);
@@ -57,6 +66,7 @@ function Streaming() {
   return (
     <div>
       <Navbar />
+      <h1 className="title">{info.original_title}</h1>
       <iframe
         src={url}
         frameborder="0"

@@ -50,6 +50,8 @@ header {
   }
   
   .sub-nav {
+    position: relative;
+    left: 20rem;
     grid-area: sb;
     padding: 10px 40px 0 40px;
   }
@@ -73,11 +75,10 @@ header {
 
 
 .search{
-  position: absolute;
+  position: relative;
   width: 300px;
   height: 40px;
-  top: 20px;
-  left: 83rem;
+  right: 15rem;
 }
 
 .search input{

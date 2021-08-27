@@ -10,12 +10,15 @@ import Footer from '../Footer';
 function MLandingPage() {
   const { id } = useParams();
   const [info, setinfo] = useState([]);
+  const [info3, setinfo3] = useState([]);
+  const [info4, setinfo4] = useState([]);
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
+  let age = "16";
 
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/movies/details", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/details", {
       id: id,
     }).then((response) => {
       setinfo(response.data);
@@ -23,7 +26,28 @@ function MLandingPage() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/movies/similar", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/details", {
+      id: id,
+    }).then((response) => {
+      setinfo3(response.data.genres[0]);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/details", {
+      id: id,
+    }).then((response) => {
+      setinfo4(response.data.release_date);
+    });
+  }, []);
+
+  if(!info.adult){
+    age = "18";
+  }
+
+
+  useEffect(() => {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/similar", {
       id: id,
     }).then((response) => {
       setinfo1(response.data.results);
@@ -31,7 +55,7 @@ function MLandingPage() {
   }, []);
 
   useEffect(() => {
-    Axios.post("http://localhost:3001/api/movies/recommendations", {
+    Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/recommendations", {
       id: id,
     }).then((response) => {
       setinfo2(response.data.results);
@@ -73,13 +97,14 @@ function MLandingPage() {
         <img src={imagesrc} class="bg" alt="" />
         <div class="content">
           <img src="images/mortal-kombat.png" class="movieTitle" alt="" />
+          <h1>{info.original_title}</h1>
           <h4>
-            <span>2020</span>
+            <span>{info4.slice(0,4)}</span>
             <span>
-              <i>16+</i>
+              <i>{age}+</i>
             </span>
             <span>1hr 55mins</span>
-            <span>11</span>
+            <span>{info3.name}</span>
           </h4>
           <p>{info.overview}</p>
           <div class="buttons">
