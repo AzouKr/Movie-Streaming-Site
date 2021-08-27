@@ -84,6 +84,9 @@ router.get("/tv/trending/tv/week", tvcontroller.trending_tv_day);
 // Get details about a tv show.
 router.post("/tv/details", tvcontroller.details);
 
+// Get details about a tv show season.
+router.post("/tv/detailsseason", tvcontroller.season);
+
 // Get images about a tv show.
 router.get("/tv/images", tvcontroller.images);
 

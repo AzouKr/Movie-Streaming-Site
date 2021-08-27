@@ -1,5 +1,43 @@
-.error{
+.box1 {
+    padding: 50px;
+    display: block;
+    grid-gap: 20px;
+    height: 137px;
+    width: 233px;
+    overflow-y: scroll;
+    height: 440px;
+
+  }
+  
+  .box1 a {
+    transition: transform .3s;  
+  }
+  
+  .box1 a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);  
+    transform: scale(1.4);
+  }
+  
+  .box1 img {
+    border-radius: 2px;
+  }
+
+.location6{
+      position: absolute;
+      top: 380px;
+      left: 1300px;
+  }
+  
+  .ep{
     position: absolute;
-    left: 37rem;
-    top: 20rem;
+    bottom: 540px;
+    left: 50px;
+  }
+  .iframe{
+    margin-top: 20rem;
+    margin-left: 20rem;
+    height: 600px;
+    width: 1000px;
 }

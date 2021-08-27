@@ -10,7 +10,8 @@ function MSearch() {
 
     const [info, setinfo] = useState([]);
     const location = useLocation().state;
-  
+    let url = "moviedetails";
+
     useEffect(() => {
       Axios.post("http://localhost:3001/api/multi/search",{
           name: location.name,
@@ -22,14 +23,19 @@ function MSearch() {
     function display() {
       return info.map((item) => {
         const imagesrc = "https://image.tmdb.org/t/p/w500" + (item.backdrop_path);
+        if(item.media_type === "movie"){
+          url = "moviedetails";
+        }else{
+          url = "tvdetails";
+        }
         return (
-          <Link to={`/moviedetails/${item.id}`}>
+          <Link to={`/`+url+`/${item.id}`}>
           <a href=""><img src= {imagesrc} alt=""/></a>
           </Link>
         );
       });
     }
-    return (
+    return (  
         <div>
         <Navbar/>
         <div class="location4" id="home">
@@ -39,7 +45,6 @@ function MSearch() {
           </div>
       </div>
         <Footer/>
-            
         </div>
     )
 }

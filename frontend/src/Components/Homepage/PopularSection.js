@@ -30,7 +30,7 @@ function PopularSection() {
     return (
         <div>
             <div class="location" id="home">
-          <h1 id="home">Popular on Netflix</h1>
+          <h1 id="home">Popular on Popcorn</h1>
           <div class="box">
           {display()}
           </div>

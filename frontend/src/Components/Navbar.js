@@ -2,6 +2,7 @@ import React from 'react'
 import './Navbar.css';
 import { Link, useHistory } from "react-router-dom";
 import { useState} from "react";
+import logo from "../img/logo-1.png";
 
 
 
@@ -21,7 +22,7 @@ function Navbar() {
         <div>
         <header>
         <div class="netflixLogo">
-        <a id="logo" href="/"><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/logo.PNG?raw=true" alt="Logo Image"/></a>
+        <a id="logo" href="/"><img src={logo} alt="Logo Image"/></a>
       </div>      
       <nav class="main-nav">     
       <Link to="/">         

@@ -19,7 +19,7 @@ function App() {
     <Route path="/moviedetails/:id" exact component={MLandingPage}/>
     <Route path="/tvdetails/:id" exact component={TVLandingPage}/>
     <Route path="/moviestream/:id" exact component={Streaming}/>
-    <Route path="/tvstream" exact component={TVStreaming}/>
+    <Route path="/tvstream/:id/:season/:episode_number" exact component={TVStreaming}/>
     <Route path="/moviesearch" exact component={MSearch}/>
     <Route path="/movies" exact component={Movies}/>
     <Route path="/series" exact component={Series}/>

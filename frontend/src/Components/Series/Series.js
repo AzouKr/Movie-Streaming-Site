@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 import {Link} from 'react-router-dom';
 import NavBar from '../Navbar';
+import Footer from '../Footer';
 
 
 function Series() {
@@ -52,17 +53,18 @@ function Series() {
         <div>
             <NavBar/>
           <div class="location2" id="home">
-            <h1 id="home">Popular on Netflix</h1>
+            <h1 id="home">Popular on Popcorn</h1>
             <div class="box">
             {display()}
           </div>
         </div>
         <div class="location2" id="home">
-            <h1 id="home">Now Playing on Netflix</h1>
+            <h1 id="home">Now Playing on Popcorn</h1>
             <div class="box">
                 {display1()}
             </div>
         </div>
+        <Footer/>
         </div>
     )
 }

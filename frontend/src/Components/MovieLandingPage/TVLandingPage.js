@@ -83,7 +83,7 @@ function TVLandingPage() {
           </h4>
           <p>{info.overview}</p>
           <div class="buttons">
-          <Link to={`/moviestream/${info.id}`}>
+          <Link to={`/tvstream/${info.id}/1/1`}>
             <a href="#">
               <i class="fa fa-play"></i>Play
             </a>

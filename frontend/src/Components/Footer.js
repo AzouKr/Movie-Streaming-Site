@@ -61,8 +61,8 @@ function Footer() {
         </div>
       </section>
       <footer>
-        <p>&copy 1997-2018 Netflix, Inc.</p>
-        <p>Carlos Avila &copy 2018</p>
+        <p>&copy 2020-2021 Popcorn, Inc.</p>
+        <p>KERIM Abdelmouiz &copy 2021</p>
       </footer>
     </div>
   );

@@ -73,6 +73,15 @@ module.exports = {
     });
   },    
 
+  season: async (req, res) => {
+    const id = req.body.id;
+    const id_s = req.body.id_s;
+
+    Axios.get("https://api.themoviedb.org/3/tv/"+ id +"/season/"+ id_s+"?api_key="+ process.env.api_key).then((response) => {
+      res.send(response.data.episodes);
+    });
+  }, 
+
   images: async (req, res) => {
     const name = req.body.name;
     const movie_id = getTvId.getTvId(name);
