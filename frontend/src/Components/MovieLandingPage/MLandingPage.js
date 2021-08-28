@@ -15,7 +15,7 @@ function MLandingPage() {
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
   let age = "16";
-
+  let url = "moviedetails";
 
   useEffect(() => {
     Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/details", {
@@ -65,12 +65,15 @@ function MLandingPage() {
   function display() {
     return info1.slice(0, 6).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.backdrop_path;
+      if(item.media_type === "movie"){
+        url = "moviedetails";
+      }else{
+        url = "tvdetails";
+      }
       return (
-        <Link to={`/moviedetails/${item.id}`}>
-          <a href="">
+          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
             <img src={imagesrc} alt="" />
           </a>
-        </Link>
       );
     });
   }
@@ -78,12 +81,15 @@ function MLandingPage() {
   function display1() {
     return info2.slice(0, 6).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.backdrop_path;
+      if(item.media_type === "movie"){
+        url = "moviedetails";
+      }else{
+        url = "tvdetails";
+      }
       return (
-        <Link to={`/moviedetails/${item.id}`}>
-          <a href="">
+          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
             <img src={imagesrc} alt="" />
           </a>
-        </Link>
       );
     });
   }

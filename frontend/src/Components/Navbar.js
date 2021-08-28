@@ -16,6 +16,7 @@ function Navbar() {
       pathname: "/moviesearch",
       state: {name: name},
       }); 
+      history.go(0)
   };
 
     return (

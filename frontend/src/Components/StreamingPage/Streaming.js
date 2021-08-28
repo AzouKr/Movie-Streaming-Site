@@ -12,6 +12,8 @@ function Streaming() {
   const [info, setinfo] = useState([]);
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
+  let url2 = "moviedetails";
+
 
   useEffect(() => {
     Axios.post("https://movie-streaming-site.herokuapp.com/api/movies/similar", {
@@ -40,12 +42,15 @@ function Streaming() {
   function display() {
     return info1.slice(0, 6).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.backdrop_path;
+      if(item.media_type === "movie"){
+        url2 = "moviedetails";
+      }else{
+        url2 = "tvdetails";
+      }
       return (
-        <Link to={`/moviedetails/${item.id}`}>
-          <a href="">
+          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
             <img src={imagesrc} alt="" />
           </a>
-        </Link>
       );
     });
   }
@@ -53,12 +58,15 @@ function Streaming() {
   function display1() {
     return info2.slice(0, 6).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.backdrop_path;
+      if(item.media_type === "movie"){
+        url2 = "moviedetails";
+      }else{
+        url2 = "tvdetails";
+      }
       return (
-        <Link to={`/moviedetails/${item.id}`}>
-          <a href="">
+          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
             <img src={imagesrc} alt="" />
           </a>
-        </Link>
       );
     });
   }

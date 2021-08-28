@@ -1,111 +1,115 @@
 header {
-    padding: 20px 20px 0 20px;
-    position: absolute;
-    top: 0;
-    display: grid;  
-    grid-gap:5px;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas: 
-     "nt mn mn sb . . . "; 
-    background-color: var(--primary);
-    width: 97%;
-    margin-bottom: 0px;  
-  }
+  padding: 20px 20px 0 20px;
+  position: absolute;
+  top: 0;
+  display: grid;  
+  grid-gap:5px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: 
+   "nt mn mn sb . . . "; 
+  background-color: var(--primary);
+  width: 97%;
+  margin-bottom: 0px;  
+}
+
+.netflixLogo {
+  grid-area: nt;
+  object-fit: cover;
+  width: 100px;
+  max-height: 100%;
   
-  .netflixLogo {
-    grid-area: nt;
-    object-fit: cover;
-    width: 100px;
-    max-height: 100%;
-    
-    padding-left: 30px;
-    padding-top: 0px;  
-  }
-  
-  .netflixLogo img {  
-    height: 35px;     
-  }
-  
-  #logo {
-    color: #E50914;  
-    margin: 0; 
-    padding: 0; 
-  }
-  
-  
-  .main-nav {
-    grid-area: mn;
-    padding: 10px 30px 0 20px;
-  }
-  
-  .main-nav a {
-    color: var(--light);
-    text-decoration: none;
-    margin: 5px;  
-    padding-right: 10px;
-  }
-  
-  .main-nav a:hover {
-    color: var(--dark);
-  }
-  
-  .sub-nav {
-    position: relative;
-    left: 20rem;
-    grid-area: sb;
-    padding: 10px 40px 0 40px;
-  }
-  
-  .sub-nav a {
-    color: var(--light);
-    text-decoration: none;
-    margin: 5px;
-  }
-  
-  .sub-nav a:hover {
-    color: var(--dark);
-  }
+  padding-left: 30px;
+  padding-top: 0px;  
+}
+
+.netflixLogo img {  
+  height: 35px;     
+}
+
+#logo {
+  color: #E50914;  
+  margin: 0; 
+  padding: 0; 
+}
+
+
+.main-nav {
+  grid-area: mn;
+  padding: 10px 30px 0 20px;
+}
+
+.main-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;  
+  padding-right: 10px;
+}
+
+.main-nav a:hover {
+  color: var(--dark);
+}
+
+.sub-nav {
+  position: relative;
+  left: 20rem;
+  grid-area: sb;
+  padding: 10px 40px 0 40px;
+}
+
+.sub-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sub-nav a:hover {
+  color: var(--dark);
+}
 .fa-search{
-    padding-right: 10px;
+  padding-right: 10px;
+}
+
+.fa-search:hover{
+cursor: pointer;
 }
 
 .fa-bell{
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 
 .search{
-  position: relative;
-  width: 300px;
-  height: 40px;
-  right: 15rem;
+position: relative;
+width: 300px;
+height: 40px;
+right: 15rem;
 }
 
 .search input{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background: transparent;
-  border: 1px solid rgba(255, 255,255, 0.5);
-  outline: none;
-  border-radius: 4px;
-  padding: 0 10px 0 45px;
-  backdrop-filter: blur(10px);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+color: #fff;
+background: transparent;
+border: 1px solid rgba(255, 255,255, 0.5);
+outline: none;
+border-radius: 4px;
+padding: 0 10px 0 45px;
+backdrop-filter: blur(10px);
 }
 
 .search input::placeholder{
-  color: #fff;
+color: #fff;
 }
 
 .search .fa-search{
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  padding-right: 10px;
-  color: #fff;
-  border-right: 1px solid #fff;
+position: absolute;
+top: 50%;
+left: 10px;
+transform: translateY(-50%);
+padding-right: 10px;
+color: #fff;
+border-right: 1px solid #fff;
 }

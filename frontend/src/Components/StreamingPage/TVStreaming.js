@@ -18,6 +18,7 @@ function TVStreaming() {
   const [info2, setinfo2] = useState([]);
   const [info3, setinfo3] = useState([]);
   const [info4, setinfo4] = useState([]);
+  let url2 = "moviedetails";
 
 
 
@@ -65,8 +66,13 @@ function TVStreaming() {
   function display() {
     return info1.slice(0, 6).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.backdrop_path;
+      if(item.media_type === "movie"){
+        url2 = "moviedetails";
+      }else{
+        url2 = "tvdetails";
+      }
       return (
-        <Link to={`/moviedetails/${item.id}`}>
+        <Link to={`/`+url2+`/${item.id}`}>
           <a href="">
             <img src={imagesrc} alt="" />
           </a>
@@ -75,11 +81,17 @@ function TVStreaming() {
     });
   }
 
+
   function display1() {
     return info2.slice(0, 6).map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.backdrop_path;
+      if(item.media_type === "movie"){
+        url2 = "moviedetails";
+      }else{
+        url2 = "tvdetails";
+      }
       return (
-        <Link to={`/moviedetails/${item.id}`}>
+        <Link to={`/`+url2+`/${item.id}`}>
           <a href="">
             <img src={imagesrc} alt="" />
           </a>
@@ -87,16 +99,15 @@ function TVStreaming() {
       );
     });
   }
+
 
   function display2() {
     return info3.map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.poster_path;
       return (
-        <Link to={`/tvstream/${id}/${item.season_number}/1`}>
-          <a href="">
+          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
             <img src={imagesrc} alt="" />
           </a>
-        </Link>
       );
     });
   }
@@ -105,11 +116,9 @@ function TVStreaming() {
     return info4.map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.still_path;
       return (
-        <Link to={`/tvstream/${id}/${item.season_number}/${item.episode_number}`}>
-          <a href="">
+          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
           <img src={imagesrc} alt="" />
           </a>
-        </Link>
       );
     });
   }
