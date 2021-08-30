@@ -48,7 +48,7 @@ function Streaming() {
         url2 = "tvdetails";
       }
       return (
-          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
+          <a onClick={() => {window.location.href=`/`+url2+`/${item.id}`}}>
             <img src={imagesrc} alt="" />
           </a>
       );
@@ -64,7 +64,7 @@ function Streaming() {
         url2 = "tvdetails";
       }
       return (
-          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
+          <a onClick={() => {window.location.href=`/`+url2+`/${item.id}`}}>
             <img src={imagesrc} alt="" />
           </a>
       );

@@ -105,7 +105,7 @@ function TVStreaming() {
     return info3.map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.poster_path;
       return (
-          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
+          <a onClick={() => {window.location.href=`/tvstream/${id}/${item.season_number}/1`}}>
             <img src={imagesrc} alt="" />
           </a>
       );
@@ -116,9 +116,11 @@ function TVStreaming() {
     return info4.map((item) => {
       const imagesrc = "https://image.tmdb.org/t/p/w500" + item.still_path;
       return (
-          <a onClick={() => {window.location.href=`/`+url+`/${item.id}`}}>
+        <Link to={`/tvstream/${id}/${season}/${item.episode_number}`}>
+          <a href="">
           <img src={imagesrc} alt="" />
           </a>
+          </Link>
       );
     });
   }
