@@ -8,7 +8,6 @@ import Footer from "../Footer";
 
 function Streaming() {
   const { id } = useParams();
-  const url = "https://autoembed.xyz/movie/tmdb/" + id;
   const [info, setinfo] = useState([]);
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
