@@ -15,11 +15,6 @@ Home Page
 ![Landing Page](frontend/src/img/1.JPG)
 <br>
 
-## Live-Demo
-https://popcoorn.netlify.app/   
-Feel free to play around there as much as you like (everything is reset at night)  
-We will keep this demo updated with our newest releases as they come, so that you can check out new features there first before deciding to deploy them in your own environments. 
-
 # Technical Details
 This application is web-based, For all the front-end components, [ReactJs](https://reactjs.org/) is used and the player is completely HTML5-based. The application is essentially split into Grails for a REST-API, and ReactJs for the frontend.
 
