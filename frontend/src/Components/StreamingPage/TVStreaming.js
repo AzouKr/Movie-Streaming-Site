@@ -12,7 +12,7 @@ function TVStreaming() {
   const { season } = useParams();
   const { episode_number } = useParams();
 
-  const url = "https://autoembed.xyz/tv/tmdb/" + id + "-"+ season + "-" + episode_number;
+  
   const [info, setinfo] = useState([]);
   const [info1, setinfo1] = useState([]);
   const [info2, setinfo2] = useState([]);
