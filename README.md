@@ -25,6 +25,8 @@ For all our feature and bug tracking, we use the [Issues Section](https://github
 # Some Images
 
 
+![Landing Page](frontend/src/img/back-2.jpg)
+<br><br>
 ![Landing Page](frontend/src/img/3.JPG)
 <br><br>
 ![Landing Page](frontend/src/img/2.JPG)
