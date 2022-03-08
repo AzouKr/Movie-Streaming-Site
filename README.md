@@ -8,11 +8,8 @@ Popcorn is a modern web application that allows you to search, view and stream m
 </h3>
 <br>
 
-<h4 align="center">
-Home Page
-</h4>
 
-![Landing Page](frontend/src/img/1.JPG)
+![Landing Page](frontend/src/img/Back.jpg)
 <br>
 
 # Technical Details
